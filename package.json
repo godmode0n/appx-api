@@ -1,0 +1,26 @@
+{
+  "name": "PBB-Rest",
+  "version": "0.0.1",
+  "description": "RESTful backend service",
+  "main": "app.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "PBB-Organization",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-traceur": "^0.17.1",
+    "gulp-tslint": "^3.0.2-beta",
+    "gulp-typescript": "^2.7.7",
+    "gulp-util": "^3.0.5",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "source-map-support": "^0.3.1",
+    "traceur-runtime": "0.0.59"
+  }
+}
