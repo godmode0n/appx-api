@@ -4,7 +4,7 @@
   "description": "RESTful backend service",
   "main": "app.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp"
   },
   "author": "PBB-Organization",
   "license": "ISC",
