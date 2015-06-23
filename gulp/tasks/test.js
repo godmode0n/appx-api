@@ -4,5 +4,5 @@ var gulp = require("gulp"),
 
 gulp.task('test', ['compile'], function(){
   return gulp.src("build/src/**/*.spec.js")
-    .pipe(mocha({reporter : 'nyan'}));
+    .pipe(mocha());
 });

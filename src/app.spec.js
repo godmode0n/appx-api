@@ -3,7 +3,7 @@ import chai from "chai";
 var expect = chai.expect;
 
 describe("A simple test", () => {
-  it("should pass", () => {
+  it("passes", () => {
     expect(true).to.be.eql(true);
   })
 })
