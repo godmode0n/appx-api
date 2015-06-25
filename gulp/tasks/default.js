@@ -1,3 +1,3 @@
 var gulp = require("gulp");
 
-gulp.task('default', ['lint', 'test']);
+gulp.task('default', ['test']);

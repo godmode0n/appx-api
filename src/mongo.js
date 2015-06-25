@@ -1,4 +1,4 @@
-export class Mongo {
+export default class Mongo {
   
 	constructor() {
 	}
