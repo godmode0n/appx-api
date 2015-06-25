@@ -1,15 +1,15 @@
 var gulp = require("gulp"),
     util = require("gulp-util"),
-    traceur = require("gulp-traceur"),
-    sourcemaps = require('gulp-sourcemaps');
+    compiler = require("gulp-babel"),
+    sourcemap = require("gulp-sourcemaps");
+    header = require("gulp-header");
 
 gulp.task('compile', ['copy-config'], function(){
   
   return gulp.src('src/**/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(traceur({
-      sourceMaps: 'file'
-    }))
-    .pipe(sourcemaps.write("."))
+    .pipe(header("require('source-map-support').install();"))
+    .pipe(sourcemap.init())
+    .pipe(compiler())
+    .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/src"));
 });
