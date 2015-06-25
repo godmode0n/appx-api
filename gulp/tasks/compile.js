@@ -3,9 +3,8 @@ var gulp = require("gulp"),
     traceur = require("gulp-traceur"),
     sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('compile', function(){
-  util.log('compileing');
-
+gulp.task('compile', ['copy-config'], function(){
+  
   return gulp.src('src/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(traceur({

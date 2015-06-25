@@ -5,7 +5,18 @@ var expect = chai.expect;
 var db = new Db();
 
 describe("Db", () => {
-  it("says hello", () => {
-    expect(db.hello()).to.be.eql('hello');
-  })
-})
+
+  describe('create', function() {
+  	it('returns a promise', function() {
+  		var result = db.create({value: 'test'});
+
+  		expect(result).to.be.an.instanceof(Promise);
+  	});
+
+
+
+  });
+
+
+});
+

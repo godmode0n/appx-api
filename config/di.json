@@ -1,0 +1,7 @@
+{
+    "services": {
+        "Mongo": {
+            "service": "./../src/mongo.js"
+        }
+    }
+}
