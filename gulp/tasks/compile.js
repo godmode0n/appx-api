@@ -1,6 +1,7 @@
 var gulp = require("gulp"),
     util = require("gulp-util"),
-    traceur = require("gulp-traceur"),
+    compiler = require("gulp-babel"),
+    sourcemap = require("gulp-sourcemaps");
     header = require("gulp-header");
 
 gulp.task('compile', function(){
@@ -8,8 +9,8 @@ gulp.task('compile', function(){
 
   return gulp.src('src/**/*.js')
     .pipe(header("require('source-map-support').install();"))
-    .pipe(traceur({
-      sourceMaps: 'file'
-    }))
+    .pipe(sourcemap.init())
+    .pipe(compiler())
+    .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/src"));
 });
