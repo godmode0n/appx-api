@@ -1,18 +1,20 @@
-var DIFactory = require('dependency-injection/DIFactory');
-var factory = new DIFactory('./../config/di.json');
-
-var di = factory.create();
-
 export class Db {
   
-	constructor() {
-		var mongo = di.create('Mongo');
-		mongo.hello();
+	constructor(mongoService) {
+		this.dbService = mongoService.getConnection();
 	}
 
-  create(value) {
+  create(collection, value) {
+  	var db = this.dbService;
   	return new Promise(function(resolve, reject) {
-  		setTimeout(resolve, 100);
+  		db.collection(collection).insertOne(value, function(err, r) {
+  			if(err) {
+  				console.error("Unable to insert into db", err);
+  				resolve(false);
+  			} else {
+  				resolve(true);
+  			}
+  		}
   	});
   }
 }
