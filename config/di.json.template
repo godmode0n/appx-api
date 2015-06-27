@@ -1,11 +1,11 @@
 {
 		"parameters": {
         "database": {
-        		"host": 			"localhost",
-        		"port": 			"27017",
-        		"name": 			"appx",
-            "user": 			"root",
-            "password": 	"godmode0n"
+        		"host":       "!!localhost",
+        		"port":       "!!27017",
+        		"name":       "!!appx",
+            "user":       "!!admin",
+            "password":   "!!admin"
         }
     },
     "services": {
