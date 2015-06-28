@@ -1,8 +1,13 @@
 import chai from 'chai';
-import {Db} from './db';
+import Db from './db';
+
 
 var expect = chai.expect;
-var db = new Db();
+var db = new Db({
+	getConnection() {
+		return false;
+	}
+});
 
 describe("Db", () => {
 

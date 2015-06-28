@@ -1,4 +1,4 @@
-export class Db {
+export default class Db {
   
 	constructor(mongoService) {
 		this.dbService = mongoService.getConnection();
@@ -14,7 +14,7 @@ export class Db {
   			} else {
   				resolve(true);
   			}
-  		}
-  	});
-  }
+  		}); 
+		});
+	}
 }

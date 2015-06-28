@@ -5,7 +5,7 @@ export default class Mongo {
   
 
 	constructor(host, port, database, username, password) {
-		var url = 'mongodb://' + username + ':' + password + '@' + host + ':' + port + '/' database;
+		var url = 'mongodb://' + username + ':' + password + '@' + host + ':' + port + '/' + database;
 		var that = this;
 
 		MongoClient.connect(url, function(err, db) {
@@ -15,7 +15,7 @@ export default class Mongo {
 			} else {
 				that.connection = db;
 			}
-		}
+		});
 	}
 
   getConnection() {
