@@ -2,5 +2,4 @@ var DIFactory = require('dependency-injection/DIFactory');
 var factory = new DIFactory('./../config/di.json');
 
 var di = factory.create();
-
-di.create('dbService');
+di.get("expressService").start();

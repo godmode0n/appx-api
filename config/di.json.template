@@ -6,7 +6,11 @@
         		"name":       "!!appx",
             "user":       "!!admin",
             "password":   "!!admin"
-        }
+        },
+				"app" : {
+						"port" : "1337",
+						"name" : "appx-api"
+				}
     },
     "services": {
         "mongoService": {
@@ -21,6 +25,16 @@
         },
         "dbService": {
         	"service": "./../src/db.js"
-        }
+        },
+				"expressService" :{
+					"service" : "./../src/ExpressService.js",
+					"arguments": [
+						"%app.port%"
+					]
+				},
+				"RouteService" : {
+					"service" : "./../src/RouteService.js",
+					"run" : true
+				}
     }
 }

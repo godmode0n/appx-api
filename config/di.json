@@ -6,7 +6,10 @@
         		"name": 			"appx",
             "user": 			"root",
             "password": 	"godmode0n"
-        }
+        },
+				"app" : {
+						"port" : "1337"
+				}
     },
     "services": {
         "mongoService": {
@@ -21,6 +24,16 @@
         },
         "dbService": {
         	"service": "./../src/db.js"
-        }
+        },
+				"expressService" :{
+					"service" : "./../src/ExpressService.js",
+					"arguments": [
+						"%app.port%"
+					]
+				},
+				"RouteService" : {
+					"service" : "./../src/RouteService.js",
+					"run" : true
+				}
     }
 }
