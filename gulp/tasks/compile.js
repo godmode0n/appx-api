@@ -5,7 +5,7 @@ var gulp = require("gulp"),
     header = require("gulp-header");
 
 gulp.task('compile', ['copy-config'], function(){
-  
+
   return gulp.src('src/**/*.js')
     .pipe(header("require('source-map-support').install();"))
     .pipe(sourcemap.init())

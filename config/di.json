@@ -6,7 +6,10 @@
         		"name": 			"appx",
             "user": 			"admin",
             "password": 	"godmode0n"
-        }
+        },
+				"app" : {
+						"port" : "1337"
+				}
     },
     "services": {
         "connectionService": {
@@ -20,13 +23,18 @@
           ]
         },
         "dbService": {
-        	"service": "./../src/db/db.js"
+
+        	"service": "./../src/db.js"
         },
-        "fooA": {
-        	"service": "./../src/fooa.js"
-        },
-        "fooB": {
-        	"service": "./../src/foob.js"
-        }
+				"expressService" :{
+					"service" : "./../src/ExpressService.js",
+					"arguments": [
+						"%app.port%"
+					]
+				},
+				"RouteService" : {
+					"service" : "./../src/RouteService.js",
+					"run" : true
+				}
     }
 }
