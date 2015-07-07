@@ -4,13 +4,13 @@
         		"host": 			"localhost",
         		"port": 			"27017",
         		"name": 			"appx",
-            "user": 			"root",
+            "user": 			"admin",
             "password": 	"godmode0n"
         }
     },
     "services": {
-        "mongoService": {
-          "service": "./../src/mongo.js",
+        "connectionService": {
+          "service": "./../src/db/mongo.js",
           "arguments": [
           	"%database.host%",
           	"%database.port%",
@@ -20,7 +20,13 @@
           ]
         },
         "dbService": {
-        	"service": "./../src/db.js"
+        	"service": "./../src/db/db.js"
+        },
+        "fooA": {
+        	"service": "./../src/fooa.js"
+        },
+        "fooB": {
+        	"service": "./../src/foob.js"
         }
     }
 }
