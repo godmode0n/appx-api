@@ -1,20 +1,19 @@
 {
 		"parameters": {
         "database": {
-        		"host":       "!!localhost",
-        		"port":       "!!27017",
-        		"name":       "!!appx",
-            "user":       "!!admin",
-            "password":   "!!admin"
+        		"host": 			"localhost",
+        		"port": 			"27017",
+        		"name": 			"appx",
+            "user": 			"admin",
+            "password": 	"godmode0n"
         },
 				"app" : {
-						"port" : "!!1337",
-						"name" : "!!appx-api"
+						"port" : "1337"
 				}
     },
     "services": {
-        "mongoService": {
-          "service": "./../src/mongo.js",
+        "connectionService": {
+          "service": "./../src/db/mongo.js",
           "arguments": [
           	"%database.host%",
           	"%database.port%",

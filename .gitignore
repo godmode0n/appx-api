@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io
 
+config/di.json
+
 ### Node ###
 # Logs
 logs
